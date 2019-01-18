@@ -194,6 +194,7 @@ Resources:
 
 Aspects:
 - Code close to master
+- Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
 - [Git-flow-Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
@@ -269,6 +270,10 @@ Process:
 Resources:
 - [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 - [Using Git rebase on the command line](https://help.github.com/articles/using-git-rebase-on-the-command-line/)
+
+### Documenting Change
+
+TODO: Explain git history
 
 ### Versioning
 
