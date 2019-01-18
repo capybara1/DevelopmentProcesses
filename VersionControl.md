@@ -25,11 +25,16 @@ Lifetime:
 
 #### Feature Branches
 
-Specialized derivation of Development Branch (short-lived)
-Reintegration requires that all designed criteria (e.g. definition of done) are met
+Compared to other Categories:
+- Specialized derivation of Development Branch
 
 Purpose:
 - Realization of a defined feature
+
+Lifetime:
+- Short-Lived
+  - Created when the developemnt of the feature starts
+  - Until the development is **done**
 
 Implications on Coding:
 - Allows rebasing (Git)
@@ -40,7 +45,18 @@ Benefits:
 - Improves traceability (history)
 - By using Continuous Integration the developer might gain valuable feedback from the automatization of tests
 
+Rules:
+- Reintegration requires that all designed criteria (e.g. definition of done) are met
+
 #### Topic Branch
+
+Compared to other Categories:
+- Similar to Feature Branch but focussing on finer grained changes than a feature
+
+Lifetime:
+- Short-Lived
+  - Created when the development of the topic starts
+  - Until the development is **done**
 
 Purpose:
 - Realization of a non-breaking change, usually an aspect of a defined feature, refactoring etc.
@@ -60,7 +76,8 @@ Benefits:
 
 #### Bugfix Branch
 
-Specialized derivation of Feature Branch which does target the introduction of a new feature but the amendment of an undesired side-effect (bug)
+Compared to other Categories:
+- Similar to Feature Branch but focussing on the amendment of an undesired side-effect (defect, bug, ...)
 
 #### Release Branches
 
@@ -69,9 +86,11 @@ Lifetime:
   - Created when the release is ready to be locked down
   - Until support of release is discontinued
 
-
 Handling of Bugs:
 - Should be fixed in master and subsequently merged to all relevant release branches
+
+Resources:
+- [Why not use tags for releases?](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts#why-not-use-tags-for-releases)
 
 #### Servicing Branch
 
@@ -196,7 +215,11 @@ Implications:
 
 #### Fast-Formward-Merge (Git)
 
+Merge that takes advantage that no changes have been comitted sinde branching of
+
 #### Squashing (Git)
+
+Combining multiple commits into a single
 
 #### Forking/Cloning a remote repository (Git)
 
