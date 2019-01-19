@@ -219,6 +219,9 @@ Resources:- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://v
 
 #### Gitflow
 
+![branches continuous](./media/branches_cont.svg)
+
+
 Aspects:
 - Code close to master
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
@@ -235,19 +238,19 @@ Resources:
 
 ### Techniques
 
-#### Merging
+#### Merging (Universal)
 
 Resources:
 - https://backlog.com/git-tutorial/integrating-branches/
 
-##### Reverse integration
+##### Reverse integration (Universal)
 
 Merging from child to parent
 
 Purpose:
 - Releasing the (assumablly) final state of a change
 
-##### Forward Integration
+##### Forward Integration (Universal)
 
 Merging from parent to child
 
@@ -271,7 +274,7 @@ Implications:
 - Higher risk of undesired side-effects due to the lack of proper testing
 - Change need to be integrated in other branches
 
-#### Cherry Picking
+#### Cherry Picking (Universal)
 
 Selecting only certain files to merge back to main branch. 
 
