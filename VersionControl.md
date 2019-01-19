@@ -11,7 +11,8 @@ Considerations:
 #### *Master* (Branch)
 
 - Also known as *trunk* or *main(line)*
-- Usually the *master* provides the latest changes which are considered *stable*
+- Usually the *master* provides the latest changes
+- Anything in the master branch is always deployable
 
 #### Development Branch
 
@@ -271,7 +272,12 @@ Resources:
 Resources:
 - [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
-#### Trunk-Based Development
+#### GitHub Flow
+
+Resources:
+- [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
+
+#### VSTS Trunk-Based Development
 
 ![branches continuous](./media/branches_cont.svg)
 
@@ -279,6 +285,7 @@ Aspects:
 - Code close to master
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
+Resources:
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
 
 ### Techniques
@@ -338,13 +345,16 @@ Resources:
 Considerations:
 - Lables are mutable
 
+#### Reverting (Universal)
+
+Also known as *Roll-Back**
+
+Each commit is considered a separate unit of change.
+This lets you roll back changes if a bug is found, or if you decide to head in a different direction.
+
 #### Fast-Formward-Merge (Git)
 
 Merge that takes advantage that no changes have been comitted sinde branching of
-
-#### Squashing (Git)
-
-Combining multiple commits into a single
 
 #### Forking/Cloning a remote repository (Git)
 
@@ -395,6 +405,14 @@ Resources:
 - [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 - [Using Git rebase on the command line](https://help.github.com/articles/using-git-rebase-on-the-command-line/)
 
+##### Squashing (Git)
+
+Combining multiple commits into a single commit.
+
+Purpose:
+- Simplification
+- Refinement if individual commits cannot be considered a meaningful unit of change by themselves
+
 #### Reparenting (TFVC)
 
 Resources:
@@ -402,7 +420,8 @@ Resources:
 
 ### Documenting Change
 
-TODO: Explain git history
+- Commits also create a transparent history of work
+- Each commit has an associated commit message, which is a description explaining *why* a particular change was made
 
 ### Versioning
 
