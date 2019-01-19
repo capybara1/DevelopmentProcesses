@@ -98,7 +98,7 @@ The notion of a Release Branch might differ, deppending on the context!
 
 ##### Prior to Release
 
-In [this article](https://nvie.com/posts/a-successful-git-branching-model/)
+In the context of the [Gitflow](#Gitflow) strategy,
 Release Branches are used to refine a release candidate prior to it's release.
 The release is basically accomplished by reverse integration into *master* and the
 application of a label.
@@ -262,20 +262,24 @@ Resources:- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://v
 
 #### Gitflow
 
+Resources:
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+#### Forking
+
+Resources:
+- [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+
+#### Trunk-Based Development
+
 ![branches continuous](./media/branches_cont.svg)
 
 Aspects:
 - Code close to master
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
-Resources:
-- [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
-
-#### Forking
-
-Resources:
-- [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
 ### Techniques
 
