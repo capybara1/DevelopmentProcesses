@@ -355,9 +355,9 @@ Process:
 
 Resources:
 - [About collaborative development models](https://help.github.com/articles/about-collaborative-development-models/)
-- https://help.github.com/articles/about-pull-requests/
-- https://yangsu.github.io/pull-request-tutorial/
-- https://help.github.com/articles/creating-a-pull-request-from-a-fork/
+- [About pull requests](https://help.github.com/articles/about-pull-requests/)
+- [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
+- [Pull Request Tutorial - A Visual Guide to Pull Requests](https://yangsu.github.io/pull-request-tutorial/)
 
 #### Rebasing (Git)
 
