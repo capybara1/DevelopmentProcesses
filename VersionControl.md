@@ -274,15 +274,19 @@ Resources:
 
 #### GitHub Flow
 
+Aspects:
+- Code close to *master* using Topic Braches
+- Deployment to production (or a canary server) before the reverse integration of a Topic Branch into *master*
+
 Resources:
 - [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
 
-#### VSTS Trunk-Based Development
+#### Trunk-Based Development (by Microsoft)
 
 ![branches continuous](./media/branches_cont.svg)
 
 Aspects:
-- Code close to master
+- Code close to *master* using Topic Braches
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
@@ -311,7 +315,7 @@ Purpose:
   - Multiple small conflic resolutions are less effort in sum than a single large one
 - Always Forward Integrate before Reverse Integrate
 
-#### Three-Way-Merge (Universal)
+##### Three-Way-Merge (Universal)
 
 In contrast to a *baseless merge* the latest common node in the history of the version graph
 is used to automatically resolve a subset of conflicts.
@@ -319,6 +323,10 @@ The amount of situations, where manual intervention is required, is minimized.
 
 Resources:
 - [Three-Way Merging: A Look Under the Hood](http://www.drdobbs.com/tools/three-way-merging-a-look-under-the-hood/240164902)
+
+##### Fast-Formward-Merge (Git)
+
+Merge that takes advantage that no changes have been comitted sinde branching of
 
 #### Hotfixing (Universal)
 
@@ -351,10 +359,6 @@ Also known as *Roll-Back**
 
 Each commit is considered a separate unit of change.
 This lets you roll back changes if a bug is found, or if you decide to head in a different direction.
-
-#### Fast-Formward-Merge (Git)
-
-Merge that takes advantage that no changes have been comitted sinde branching of
 
 #### Forking/Cloning a remote repository (Git)
 
