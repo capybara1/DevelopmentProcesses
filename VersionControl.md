@@ -215,13 +215,18 @@ Resources:
 
 #### Development and Release Isolation
 
-Formerly also known as *Basic-Branch-Plan*
+Formerly also referred to as *Basic-Branch-Plan*
 
 Resources:
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 15
 - [Parallele Softwareentwicklung spielend meistern](https://www.heise.de/developer/artikel/Parallele-Softwareentwicklung-spielend-meistern-2042425.html?seite=all)
 
 #### Code Promotion
+
+A hierarchie of multiple long-lived branches (e.g. *master* > development > test > release), where each branch represents a higher level of maturity
+
+Disadvantages:
+- Due to the disadvantages of long-lived branches, the use of this strategy is usually discouraged
 
 Resources:
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18
