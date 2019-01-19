@@ -20,11 +20,18 @@ Comparison to other Categories:
 
 Purpose:
 - Maintains and protects a stable *master*
+- Allows collaboration for a small amount of units (teams, ...)
 
 Lifetime:
 - Long-Lived
   - Created right after creation fo the repository
   - Indefinite life-span
+
+Rules:
+- Integrate in both directions on a regular basis
+
+Disadvantages:
+- Does not scale well
 
 #### Feature Branches
 
@@ -59,7 +66,7 @@ Comparison to other Categories:
 Lifetime:
 - Short-Lived
   - Created when the development of the topic starts
-  - Until the development is **done**
+  - Until the development is *done*
 
 Purpose:
 - Realization of a non-breaking change, usually an aspect of a defined feature, refactoring etc.
@@ -227,7 +234,6 @@ Resources:- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://v
 #### Gitflow
 
 ![branches continuous](./media/branches_cont.svg)
-
 
 Aspects:
 - Code close to master
