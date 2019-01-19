@@ -439,19 +439,3 @@ Schemes:
 ### Misc
 
 - [Git lost my changes: Taking a look at Git's history simplification](https://docs.microsoft.com/en-us/azure/devops/articles/git-log-history-simplification?view=vsts)
-
-# Deployment
-
-## Strategies
-
-### Decentral
-
-### Central
-
-#### Rolling Deployment
-
-#### A/B Deployment
-
-#### Canary Deployment
-
-#### Highlander Deployment
