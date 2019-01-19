@@ -187,6 +187,7 @@ Resources:
 
 Relevant Branch Categories:
 - Development Branches
+
 Apects:
 - Maintains and protects a stable *master*
   - *Master* is e.g. used for releases (assuming the propability of patching is low; might require the introduction of Hot Fix Branches just in case the assumption doesn't hold)
@@ -285,7 +286,9 @@ Purpose:
 
 #### Three-Way-Merge (Universal)
 
-TODO: Implictions of direction?
+In contrast to a *baseless merge* the latest common node in the history of the version graph
+is used to automatically resolve a subset of conflicts.
+The amount of situations, where manual intervention is required, is minimized.
 
 Resources:
 - [Three-Way Merging: A Look Under the Hood](http://www.drdobbs.com/tools/three-way-merging-a-look-under-the-hood/240164902)
