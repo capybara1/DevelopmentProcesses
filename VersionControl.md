@@ -13,6 +13,12 @@ Considerations:
 - Also known as *trunk* or *main(line)*
 - Usually the *master* provides the latest changes
 - Anything in the master branch is always deployable
+  - Each commit is thus at least a Potentially Shippable Increment (PSI)
+  - In case of Development or Feature Isolation, a commit represents a Minimum Marketable Feature
+
+Resouces:
+- https://agilevelocity.com/product-owner/psi-potentially-shippable-increment/
+- https://agilevelocity.com/product-owner/the-mmf-minimum-marketable-feature/
 
 #### Development Branch
 
