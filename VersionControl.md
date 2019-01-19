@@ -33,6 +33,9 @@ Rules:
 
 Disadvantages:
 - Does not scale well
+- Unless otherwise agreed, anything in the master branch must be always deployable.
+  Consequently, commits might become fairly complex, especially if the code base has become complex over time.
+  This affects the quality of documentation as described [below](#documenting-change).
 
 #### Feature Branches
 
