@@ -16,7 +16,7 @@ Considerations:
 #### Development Branch
 
 Comparison to other Categories:
-- Long-Lived multi-purpose branch (feature development, bugfixing, ...)
+- Long-Lived multi-purpose branch (feature development, bugfixing, integration, ...)
 
 Purpose:
 - Maintains and protects a stable *master*
@@ -94,6 +94,20 @@ Specialized, short-lived
 
 #### Release Branches
 
+The notion of a Release Branch might differ, deppending on the context!
+
+##### Prior to Release
+
+In [this article](https://nvie.com/posts/a-successful-git-branching-model/)
+Release Branches are used to refine a release candidate prior to it's release.
+The release is basically accomplished by reverse integration into *master* and the
+application of a label.
+
+##### During Release
+
+The Release Branches is created in order to create a release.
+The use of labels for marking a release is discouraged.
+
 Lifetime:
 - Long-Lived
   - Created when the release is ready to be locked down
@@ -142,6 +156,9 @@ Rules:
 - Under the presence of a hotfix branch, it is not permitted to apply a hotfix directly to the Release Branch
 
 #### Integration Branch
+
+Compared to other Categories:
+- Specialized derivation of Development Branch
 
 Purpose:
 - Allows refined control of the integration of multiple branches for some purpose (e.g. creating a release)
@@ -252,7 +269,6 @@ Aspects:
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
-- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 - [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
 
