@@ -64,7 +64,7 @@ Purpose:
 Implications on Coding:
 - Small simple changes
 - All introduced changes *must* be non-breaking
-- Means such as e.g. Feature-Flags are required to shield stakeholders (customers, users, developers, ...) from unintended side-effects
+- Techniques such as e.g. Feature-Toggling are required to shield stakeholders (customers, users, developers, ...) from unintended side-effects
 - Allows rebasing (Git)
 
 Benefits:
@@ -91,6 +91,7 @@ Handling of Bugs:
 
 Resources:
 - [Why not use tags for releases?](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts#why-not-use-tags-for-releases)
+- [ALM Basic Branch Plan - Purpose of Release Branch?](https://stackoverflow.com/questions/25293628/alm-basic-branch-plan-purpose-of-release-branch)
 
 #### Servicing Branch
 
@@ -112,7 +113,6 @@ Purpose:
 - Provides an additional level of isolation to a Release Branch
 - Hotfixes can be made in the Hotfix Branch without affecting the history of the Release Branch
 
-
 Lifetime:
 - Long-Lived
   - Created when the release is ready to be locked down
@@ -124,7 +124,12 @@ Restrictions:
 #### Integration Branch
 
 Purpose:
-- Allows  refined control of the integration of multiple branches for some purpose (e.g. creating a release)
+- Allows refined control of the integration of multiple branches for some purpose (e.g. creating a release)
+
+#### Test Branch
+
+Purpose:
+- Resembles a state of maturity
 
 ### Strategies
 
@@ -154,7 +159,9 @@ Guidance:
 #### Main Only
 
 Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 13
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#main-only)
+- [Version Control Walkthrough (Branching Strategies) Part 1 – MAIN Only and Simplicity Rules](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-1-main-only-and-simplicity-rules/)
 
 #### Development Isolation
 
@@ -168,43 +175,93 @@ Apects:
 - Continuously kept in-sync with *master*
 
 Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#development-isolation)
+- [Version Control Walkthrough (Branching Strategies) Part 2 – Development Isolation … welcome branching](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-2-development-isolation-welcome-branching/)
 
 #### Feature Isolation
 
-https://de.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+Resources:
+- [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18f.
+- [Feature Branch Workflow in Git](https://de.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+- [Version Control Walkthrough (Branching Strategies) Part 3 – Feature Isolation … a special!](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/17/version-control-walkthrough-branching-strategies-part-3-feature-isolation-a-special/)
 
 #### Release Isolation
 
 Resources:
-
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14f.
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#feature-isolation)
+
+#### Development and Release Isolation
+
+Formerly also known as *Basic-Branch-Plan*
+
+Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 15
+- [Parallele Softwareentwicklung spielend meistern](https://www.heise.de/developer/artikel/Parallele-Softwareentwicklung-spielend-meistern-2042425.html?seite=all)
+
+#### Code Promotion
+
+Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18
 
 #### Servicing and Release Isolation
 
 Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 15f.
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#servicing-and-release-isolation)
 
 #### Servicing, Hotfix and Release Isolation
 
-Resources:
+Resources:- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 17
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#servicing-hotfix-release-isolation)
 
-#### Git-Flow
+#### Gitflow
 
 Aspects:
 - Code close to master
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
-- [Git-flow-Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
 
+#### Forking
+
+Resources:
+- [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+
 ### Techniques
+
+#### Merging
+
+Resources:
+- https://backlog.com/git-tutorial/integrating-branches/
+
+##### Reverse integration
+
+Merging from child to parent
+
+Purpose:
+- Releasing the (assumablly) final state of a change
+
+##### Forward Integration
+
+Merging from parent to child
+
+Purpose:
+- Regular Forward Integration keeps the deviation from the parent low
+  - Multiple small conflic resolutions are less effort in sum than a single large one
+- Always Forward Integrate before Reverse Integrate
 
 #### Three-Way-Merge (Universal)
 
 TODO: Implictions of direction?
+
+Resources:
+- [Three-Way Merging: A Look Under the Hood](http://www.drdobbs.com/tools/three-way-merging-a-look-under-the-hood/240164902)
 
 #### Hotfixing (Universal)
 
@@ -213,6 +270,23 @@ Hotfixing refers to the practice that changes are made in or close to the Releas
 Implications:
 - Higher risk of undesired side-effects due to the lack of proper testing
 - Change need to be integrated in other branches
+
+#### Cherry Picking
+
+Selecting only certain files to merge back to main branch. 
+
+#### Feature Toggling (Universal)
+
+Also known as Feature-Flags
+
+Resources:
+- [ALM Rangers : Software Development with Feature Toggles](https://msdn.microsoft.com/en-ca/magazine/dn683796.aspx)
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 21
+
+#### Labeling (Universal)
+
+Considerations:
+- Lables are mutable
 
 #### Fast-Formward-Merge (Git)
 
@@ -270,6 +344,11 @@ Process:
 Resources:
 - [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 - [Using Git rebase on the command line](https://help.github.com/articles/using-git-rebase-on-the-command-line/)
+
+#### Reparenting (TFVC)
+
+Resources:
+- [TFS – Reparenting a Branch](https://alistairbmackay.wordpress.com/2014/01/15/tfs-reparenting-a-branch/)
 
 ### Documenting Change
 
