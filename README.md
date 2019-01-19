@@ -6,3 +6,4 @@ A collection of documents related to the topic of Development Processes
 
 - [Version Control](./VersionControl.md)
 - [Deployment](./Deployment.md)
+- [Software Quality](./SoftwareQuality.md)
