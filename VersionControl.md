@@ -99,8 +99,11 @@ Lifetime:
   - Created when the release is ready to be locked down
   - Until support of release is discontinued
 
-Handling of Bugs:
-- Should be fixed in master and subsequently merged to all relevant release branches
+Rules:
+- Lock the branch immediatelly; the only situations that permit a temporary removal of the log
+  - Integrating changes for a subsequent minor release
+  - In case there is not Hotfix Branch: hotfixing
+- Bugs should be fixed in master and subsequently merged to all relevant release branches
 
 Resources:
 - [Why not use tags for releases?](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts#why-not-use-tags-for-releases)
@@ -134,6 +137,9 @@ Lifetime:
 
 Restrictions:
 - Never forward integrate from servicing to hotfix or from hotfix to release.
+
+Rules:
+- Under the presence of a hotfix branch, it is not permitted to apply a hotfix directly to the Release Branch
 
 #### Integration Branch
 
