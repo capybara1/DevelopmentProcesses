@@ -15,6 +15,9 @@ Considerations:
 
 #### Development Branch
 
+Comparison to other Categories:
+- Long-Lived multi-purpose branch (feature development, bugfixing, ...)
+
 Purpose:
 - Maintains and protects a stable *master*
 
@@ -26,7 +29,7 @@ Lifetime:
 #### Feature Branches
 
 Compared to other Categories:
-- Specialized derivation of Development Branch
+- Specialized, short-lived derivation of Development Branch
 
 Purpose:
 - Realization of a defined feature
@@ -50,7 +53,7 @@ Rules:
 
 #### Topic Branch
 
-Compared to other Categories:
+Comparison to other Categories:
 - Similar to Feature Branch but focussing on finer grained changes than a feature
 
 Lifetime:
@@ -77,7 +80,10 @@ Benefits:
 #### Bugfix Branch
 
 Compared to other Categories:
-- Similar to Feature Branch but focussing on the amendment of an undesired side-effect (defect, bug, ...)
+- Specialized, short-lived derivation of Development Branch
+
+Specialized, short-lived 
+- Removal of an undesired side-effect (defect, bug, ...)
 
 #### Release Branches
 
@@ -98,6 +104,7 @@ Resources:
 Purpose:
 - Provides an additional level of isolation to a Release Branch
 - Origin of service pack Release Branches that belong to the same major version
+  - A service pack is a collection of bugfixes, hotfixes and features targeting a previous product release
 
 Lifetime:
 - Long-Lived
