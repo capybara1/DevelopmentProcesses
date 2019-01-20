@@ -26,7 +26,7 @@ Comparison to other Categories:
 - Long-Lived multi-purpose branch (feature development, bugfixing, integration, ...)
 
 Purpose:
-- Maintains and protects a stable *master*
+- Maintains and protects a stable *master* (always deployable)
 - Allows collaboration for a small amount of units (teams, ...)
 
 Lifetime:
@@ -335,7 +335,12 @@ Resources:
 
 ##### Fast-Formward-Merge (Git)
 
-Merge that takes advantage that no changes have been comitted sinde branching of
+Merge that takes advantage that no changes have been comitted sinde branching of, targeting a linear history
+
+Resources:
+- [Fast-Forward Git Merge](https://ariya.io/2013/09/fast-forward-git-merge)
+- [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+- [Git tips: Use only fast-forward merges (with rebase)](https://medium.com/@mvuksano/git-tips-use-only-fast-forward-merges-with-rebase-c80c9d260a83)
 
 #### Hotfixing (Universal)
 
@@ -405,18 +410,28 @@ Resources:
 #### Rebasing (Git)
 
 Purpose:
-- Edit previous commit messages
-- Combine multiple commits into one
-- Delete or revert commits that are no longer necessary
-
-Process:
-- Invoke `git rebase` for a particular branch
-- Use a [set of designated commands](https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing) to modify the branch-history
-- In case that two or more commits modified the same line in the same file, manual conflict resolution is required
+- Reapply commits on top of another base tip, either unmodified or with modifications
+  using a [range of special commands](https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing)
+  provided in the context of rebasing
+- One common use-case is to enable a subsequent Fast Forward Merge
+  in case the *master* has been modified since the branch was created
+- Another common use-case is to clean-up the history of a branch (typically a Feature Branch)
+  in order to improve readability and [documentation](#documenting-change)
 
 Resources:
-- [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+- [rebase documentation](https://git-scm.com/docs/git-rebase)
 - [Using Git rebase on the command line](https://help.github.com/articles/using-git-rebase-on-the-command-line/)
+- [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+- [Git Tools - Rewriting History](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History)
+- [Paul Boxley - Git caret and tilde](http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde)
+
+#### Resetting (Git)
+
+Purpose:
+- Changing the position of the HEAD pointer, the staged items and the working directory to a former state
+
+Resources:
+- [Git Tools - Reset Demystified](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
 
 ##### Squashing (Git)
 
