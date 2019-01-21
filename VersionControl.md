@@ -108,10 +108,15 @@ The notion of a Release Branch might differ, deppending on the context!
 
 ##### Prior to Release
 
+Compared to other Categories:
+- An Integration Branch for the purpose of ensuring that only commits exist in *master* which
+  can be related to an actual release (including hotfix-releases)
+
 In the context of the [Gitflow](#Gitflow) strategy,
 Release Branches are used to refine a release candidate prior to it's release.
 The release is basically accomplished by reverse integration into *master* and the
 application of a label.
+
 
 ##### During Release
 
