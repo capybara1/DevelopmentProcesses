@@ -267,7 +267,8 @@ Resources:
 
 #### Servicing, Hotfix and Release Isolation
 
-Resources:- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 17
+Resources:
+- [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 17
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#servicing-hotfix-release-isolation)
 
 #### Gitflow
@@ -417,6 +418,9 @@ Purpose:
   in case the *master* has been modified since the branch was created
 - Another common use-case is to clean-up the history of a branch (typically a Feature Branch)
   in order to improve readability and [documentation](#documenting-change)
+
+Disadvantages:
+- Do not rebase commits that have already been pushed to a public repository
 
 Resources:
 - [rebase documentation](https://git-scm.com/docs/git-rebase)
