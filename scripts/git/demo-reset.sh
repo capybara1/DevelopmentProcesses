@@ -2,6 +2,7 @@
 
 echo "Initialize"
 
+LOGFORMAT="%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
 TMPDEMODIR=$(mktemp -d)
 pushd $TMPDEMODIR
 
@@ -16,7 +17,7 @@ git add demo.txt
 
 git commit -m "Initial commit"
 
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Second commit (1)"
 
@@ -28,14 +29,14 @@ git add demo.txt
 git commit -m "Changed second line"
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "soft reset"
 
 git reset HEAD~1 --soft # moves only HEAD to 1st parent
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Status:"
 git status --short
@@ -54,14 +55,14 @@ git add demo.txt
 git commit -m "Changed second line"
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Mixed reset"
 
 git reset HEAD~1 # moves HEAD to 1st parent and resets the staged files in the index. --mixed is the implicit default
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Status:"
 git status --short
@@ -73,31 +74,29 @@ git add demo.txt
 git commit -m "Changed second line"
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Hard reset"
 
 git reset HEAD~1 --hard # moves HEAD to 1st parent and resets the staged files in the index as well as the working directory
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 echo "Status:"
 git status --short
 
-echo "Undo reset"
-
+echo "Reflog:"
 git reflog
 
+echo "Undo reset:"
 git reset 'HEAD@{1}'
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
 
 git reset --hard
 
 echo "Cleanup"
-
 popd
 rm -rf $TMPDEMODIR
-unset TMPDEMODIR
