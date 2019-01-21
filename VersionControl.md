@@ -215,12 +215,12 @@ Resources:
 Relevant Branch Categories:
 - Development Branches
 
-Apects:
+Aspects:
 - Maintains and protects a stable *master*
   - *Master* is e.g. used for releases (assuming the propability of patching is low; might require the introduction of Hot Fix Branches just in case the assumption doesn't hold)
   - Multiple collaborating units may use separate Development Branches
 - Long-lived
-- Continuously kept in-sync with *master*
+- Frequently kept in-sync with *master*
 
 Resources:
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14
@@ -277,6 +277,11 @@ Resources:
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 - [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
+#### Git Integration Based Workflow
+
+Resources:
+- [Git Integration Based Workflow](http://www.practicalweb.co.uk/blog/2015/02/16/git-integration-branch-based-workflow/)
+
 #### Forking
 
 Resources:
@@ -291,7 +296,7 @@ Aspects:
 Resources:
 - [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
 
-#### Trunk-Based Development (by Microsoft)
+#### Trunk-Based Development
 
 ![branches continuous](./media/branches_cont.svg)
 
@@ -300,6 +305,7 @@ Aspects:
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
+- [Trunk-Based Development:Introduction](https://trunkbaseddevelopment.com/)
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
 
 ### Techniques
@@ -464,3 +470,4 @@ Schemes:
 ### Misc
 
 - [Git lost my changes: Taking a look at Git's history simplification](https://docs.microsoft.com/en-us/azure/devops/articles/git-log-history-simplification?view=vsts)
+- [Monorepo - Wikipedia](https://en.wikipedia.org/wiki/Monorepo)
