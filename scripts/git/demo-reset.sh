@@ -1,102 +1,105 @@
 #!/bin/bash
 
+LOGFORMAT="%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+
+indent() { sed 's/^/  /'; }
+
 echo "Initialize"
 
-LOGFORMAT="%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
 TMPDEMODIR=$(mktemp -d)
-pushd $TMPDEMODIR
+pushd $TMPDEMODIR > /dev/null
 
-git init
+git init | indent
 
 echo "First commit"
 
 echo "A
 B" > demo.txt
 
-git add demo.txt
+git add demo.txt | indent
 
-git commit -m "Initial commit"
+git commit -m "Initial commit" | indent
 
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Second commit (1)"
 
 echo "A
 B2" > demo.txt
 
-git add demo.txt
+git add demo.txt | indent
 
-git commit -m "Changed second line"
+git commit -m "Changed second line" | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "soft reset"
 
-git reset HEAD~1 --soft # moves only HEAD to 1st parent
+git reset HEAD~1 --soft | indent # moves only HEAD to 1st parent
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Status:"
-git status --short
+git status --short | indent
 
 echo "Reset staged files"
 
-git reset
+git reset | indent
 
 echo "Status:"
-git status --short
+git status --short | indent
 
 echo "Second commit (2nd attempt)"
 
-git add demo.txt
+git add demo.txt | indent
 
-git commit -m "Changed second line"
+git commit -m "Changed second line" | indent
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Mixed reset"
 
-git reset HEAD~1 # moves HEAD to 1st parent and resets the staged files in the index. --mixed is the implicit default
+git reset HEAD~1 | indent # moves HEAD to 1st parent and resets the staged files in the index. --mixed is the implicit default
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Status:"
-git status --short
+git status --short | indent
 
 echo "Second commit (3rd attempt)"
 
-git add demo.txt
+git add demo.txt | indent
 
-git commit -m "Changed second line"
+git commit -m "Changed second line" | indent
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Hard reset"
 
-git reset HEAD~1 --hard # moves HEAD to 1st parent and resets the staged files in the index as well as the working directory
+git reset HEAD~1 --hard | indent # moves HEAD to 1st parent and resets the staged files in the index as well as the working directory
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
 echo "Status:"
-git status --short
+git status --short | indent
 
 echo "Reflog:"
-git reflog
+git reflog | indent
 
 echo "Undo reset:"
-git reset 'HEAD@{1}'
+git reset 'HEAD@{1}' | indent
 
 echo "Graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT
+git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
 
-git reset --hard
+git reset --hard | indent
 
 echo "Cleanup"
-popd
+popd > /dev/null
 rm -rf $TMPDEMODIR
