@@ -10,11 +10,12 @@ Considerations:
 
 #### *Master* (Branch)
 
-- Also known as *trunk* or *main(line)*
-- Usually the *master* provides the latest changes
-- Anything in the master branch is always deployable
+Also known as *trunk* or *main(line)*
+
+Common qualities:
+- The master branch is always deployable
   - Each commit is thus at least a Potentially Shippable Increment (PSI)
-  - In case of Development or Feature Isolation, a commit represents a Minimum Marketable Feature
+  - In some cases each commit may be even associated with a release version
 
 Resouces:
 - https://agilevelocity.com/product-owner/psi-potentially-shippable-increment/
@@ -26,7 +27,7 @@ Comparison to other Categories:
 - Long-Lived multi-purpose branch (feature development, bugfixing, integration, ...)
 
 Purpose:
-- Maintains and protects a stable *master* (always deployable)
+- Maintains and protects the agreed upon qualities of *master*
 - Allows collaboration for a small amount of units (teams, ...)
 
 Lifetime:
@@ -109,14 +110,18 @@ The notion of a Release Branch might differ, deppending on the context!
 ##### Prior to Release
 
 Compared to other Categories:
-- An Integration Branch for the purpose of ensuring that only commits exist in *master* which
-  can be related to an actual release (including hotfix-releases)
+- A kind of Integration Branch
+
+Purpose:
+- Maintains and protects the agreed upon qualities of *master*
+  - Usually in this case each commit to *master* ought to be
+    relatable to an actual release version
+- Allows collaboration for a small amount of units (teams, ...)
 
 In the context of the [Gitflow](#Gitflow) strategy,
 Release Branches are used to refine a release candidate prior to it's release.
 The release is basically accomplished by reverse integration into *master* and the
 application of a label.
-
 
 ##### During Release
 
@@ -174,14 +179,16 @@ Rules:
 
 Compared to other Categories:
 - Specialized derivation of Development Branch
+- In some cases the notion of a Release Brach is a kind of Integration Branch
 
 Purpose:
+- Maintains and protects the agreed upon qualities of *master*
 - Allows refined control of the integration of multiple branches for some purpose (e.g. creating a release)
 
 #### Test Branch
 
 Purpose:
-- Resembles a state of maturity
+- Resembles a state of maturity in the process of promoting changes up a hierarchie
 
 ### Strategies
 
