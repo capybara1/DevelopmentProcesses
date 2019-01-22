@@ -20,7 +20,7 @@ git add demo.txt | indent
 git commit -m "Initial commit" | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Second commit on master"
 
@@ -31,14 +31,14 @@ git add demo.txt | indent
 git commit -m "Changed first line" | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Create feature branch"
 
 git branch feature01 | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Third commit on master"
 
@@ -49,7 +49,7 @@ git add demo.txt | indent
 git commit -m "Changed first line" | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Commit on feature branch"
 
@@ -62,7 +62,7 @@ git add demo2.txt | indent
 git commit -m "Changed second line" | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Rebase feature branch to tip of master"
 git rebase master | indent
@@ -72,7 +72,7 @@ git checkout master | indent
 git merge feature01 --ff-only | indent
 
 echo "Git graph:"
-git log --graph --full-history --all --color --pretty=format:$LOGFORMAT | indent
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } | indent
 
 echo "Cleanup"
 popd > /dev/null
