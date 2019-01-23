@@ -7,7 +7,7 @@
 Resouces:
 - https://agilevelocity.com/product-owner/psi-potentially-shippable-increment/
 
-### A Minimum Viable Product (MVP)
+### Minimum Viable Product (MVP)
 
 - Is a fully functioning product release that is developed with the least effort possible
 - MVPs are used to explore a hypothesis about what your customers really want
@@ -38,6 +38,10 @@ Resouces:
 ### Minimal Marketable Product (MMP)
 
 - The first Minimal Marketable Release
+
+### Story Points
+
+![story points](./media/story-points.svg)
 
 Resouces:
 - https://www.disciplinedagiledelivery.com/defining-mvp/
