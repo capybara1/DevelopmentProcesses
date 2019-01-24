@@ -10,6 +10,7 @@ TMPDEMODIR=$(mktemp -d)
 pushd $TMPDEMODIR > /dev/null
 
 git init |& indent
+echo "* text eol=lf" > ".gitattributes"
 
 echo "First commit on master"
 
