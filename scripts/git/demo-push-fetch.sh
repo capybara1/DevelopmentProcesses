@@ -1,15 +1,25 @@
 #!/bin/bash
 
+set -e
+
 LOGFORMAT="%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
 
 indent() { sed 's/^/  /'; }
 
-echo "Initialize"
+cleanup() {
+	echo "Cleanup"
+	popd > /dev/null
+	rm -rf $TMPDEMODIR1
+	rm -rf $TMPDEMODIR2
+}
 
 TMPDEMODIR1=$(mktemp -d)
 TMPDEMODIR2=$(mktemp -d)
 pushd $TMPDEMODIR1 > /dev/null
 
+trap cleanup EXIT
+
+echo "Initialize"
 git init |& indent
 echo "* text eol=lf" > ".gitattributes"
 
@@ -73,8 +83,3 @@ git fetch origin |& indent
 
 echo "Git graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
-
-echo "Cleanup"
-popd > /dev/null
-rm -rf $TMPDEMODIR1
-rm -rf $TMPDEMODIR2
