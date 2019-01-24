@@ -23,6 +23,9 @@ echo "Initialize"
 git init |& indent
 echo "* text eol=lf" > ".gitattributes"
 
+echo "Remotes:"
+git remote -v
+
 echo "Current: $PWD"
 
 echo "Commit on master"
@@ -39,9 +42,15 @@ echo "Git graph:"
 cd $TMPDEMODIR2
 echo "Current: $PWD"
 
-echo "Create feature branch"
+echo "Clone repository"
 
-git clone $TMPDEMODIR1 .
+git clone $TMPDEMODIR1 . |& indent
+
+echo "Git graph:"
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
+
+echo "Remotes:"
+git remote -v |& indent
 
 echo "Create feature branch"
 
