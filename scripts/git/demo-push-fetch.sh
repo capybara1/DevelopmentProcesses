@@ -24,7 +24,7 @@ git init |& indent
 echo "* text eol=lf" > ".gitattributes"
 
 echo "Remotes:"
-git remote -v
+[ "$(git remote -v)" ] || echo "none" | indent
 
 echo "Current: $PWD"
 

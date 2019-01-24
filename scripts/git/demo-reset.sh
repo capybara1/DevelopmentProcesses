@@ -22,6 +22,8 @@ echo "Initialize"
 git init |& indent
 echo "* text eol=lf" > ".gitattributes"
 
+git add ".gitattributes" |& indent
+
 echo "First commit"
 
 echo "A
@@ -92,7 +94,7 @@ echo "Graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
 
 echo "Status:"
-git status --short |& indent
+[ "$(git status --short)" ] || echo "none" | indent
 
 echo "Reflog:"
 git reflog |& indent
@@ -104,4 +106,4 @@ echo "Graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
 
 echo "Status:"
-git status --short |& indent
+[ "$(git status --short)" ] || echo "none" | indent
