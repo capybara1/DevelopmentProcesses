@@ -26,7 +26,7 @@ echo "* text eol=lf" > ".gitattributes"
 echo "Remotes:"
 [ "$(git remote -v)" ] || echo "none" | indent
 
-echo "Current: $PWD"
+echo -e "\x1B[36mCurrently at origin\x1B[m ($PWD)"
 
 echo "Commit on master"
 
@@ -40,7 +40,7 @@ echo "Git graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
 
 cd $TMPDEMODIR2
-echo "Current: $PWD"
+echo -e "\x1B[35mCurrently at clone\x1B[m ($PWD)"
 
 echo "Clone repository"
 
@@ -76,7 +76,7 @@ echo "Push to remote:"
 git push origin feature01 |& indent
 
 cd $TMPDEMODIR1
-echo "Current: $PWD"
+echo -e "\x1B[36mCurrently at origin\x1B[m ($PWD)"
 
 echo "Git graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
@@ -85,7 +85,7 @@ echo "Merge feature branch into master"
 git merge feature01 |& indent
 
 cd $TMPDEMODIR2
-echo "Current: $PWD"
+echo -e "\x1B[35mCurrently at clone\x1B[m ($PWD)"
 
 echo "Fetch from remote"
 git fetch origin |& indent
