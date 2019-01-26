@@ -1,7 +1,5 @@
 #!/bin/bash
 
-minikube start
-
 kubectl run hello-minikub --image=gcr.io/google-containers/echoserver:1.10
 
 # A deployment is any set of deployable resources (container(s), application, pod(s))
@@ -18,5 +16,3 @@ kubectl describe pod hello-minikube
 curl $(minikube service hello-minikube --url)
 
 kubectl delete deployment hello-minikube
-
-minikube stop

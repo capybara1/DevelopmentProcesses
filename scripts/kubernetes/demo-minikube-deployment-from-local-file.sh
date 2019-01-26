@@ -2,18 +2,14 @@
 
 script_directory=$(dirname "$0")
 
-minikube start
-
 kubectl apply -f "${script_directory}/echoserver-deployment.yml"
 
-kubectl expose deployment hello-minikube --type=NodePort
+kubectl expose deployment echoserver-deployment --type=NodePort
 
 kubectl get pod
 
-kubectl describe pod hello-minikube
+kubectl describe pod echoserver-deployment
 
-curl $(minikube service hello-minikube --url)
+curl $(minikube service echoserver-deployment --url)
 
-kubectl delete deployment hello-minikube
-
-minikube stop
+kubectl delete deployment echoserver-deployment
