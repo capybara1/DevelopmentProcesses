@@ -87,8 +87,13 @@ Container Orchestration:
 - ...
 
 Resources:
-- [Cloud Native Computing Foundation](https://www.cncf.io/)
-- [Kubernetes Tutorial | Kubernetes | Kubernetes tutorial for beginners](https://www.youtube.com/watch?v=gpmerrSpbHg)
-- [Container Management: Kubernetes vs Docker Swarm, Mesos + Marathon, Amazon ECS](https://platform9.com/wp-content/uploads/2018/08/kubernetes-comparison-ebook.pdf)
-- [kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
-- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- Docker:
+  - [How Should I Get Application Configuration into my Docker Containers?](https://dantehranian.wordpress.com/2015/03/25/how-should-i-get-application-configuration-into-my-docker-containers/)
+- Kubernetes:
+  - [Cloud Native Computing Foundation](https://www.cncf.io/)
+  - [Kubernetes Tutorial | Kubernetes | Kubernetes tutorial for beginners](https://www.youtube.com/watch?v=gpmerrSpbHg)
+  - [Container Management: Kubernetes vs Docker Swarm, Mesos + Marathon, Amazon ECS](https://platform9.com/wp-content/uploads/2018/08/kubernetes-comparison-ebook.pdf)
+  - [kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+  - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+  - Troubleshooting:
+    - [Kubernetes fails to start (hangs in starting phase) #1962](https://github.com/docker/for-win/issues/1962#issuecomment-418152414)
