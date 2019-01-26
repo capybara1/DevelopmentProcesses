@@ -63,18 +63,24 @@ Products:
 #### Container based Virtualization
 
 Container Runtimes:
-- Docker (de-facto standard)
+- Docker
+  - Remarks:
+    - De-facto standard
 - Windows Containers
 - ...
 
-Container Orchestration Frameworks:
-- Kubernetes (de-facto standard, sometimes abreviated K8s)
+Container Orchestration:
+- Kubernetes
+  - Remarks
+    - De-facto standard
+    - Sometimes abreviated "K8s"
   - Features:
     - Deployment-History (documentation, rollbacks, ...)
-    - Labeling system (place restrictions on deployments that aim to meet
+    - Labeling (place restrictions on deployments that aim to meet
       specific requirements e.g. server capabilities like HW support)
     - Health monitoring (liveness- & readiness-probing)
-    - Dashboard UI
+    - CLI: `kubectl`
+    - GUI: Dashboard UI
 - Docker Swarm
 - Apache Mesos + Marathon
 - Amazon ECS
