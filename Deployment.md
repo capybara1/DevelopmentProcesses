@@ -62,17 +62,27 @@ Products:
 
 #### Container based Virtualization
 
-Container Formats:
+Container Runtimes:
 - Docker (de-facto standard)
 - Windows Containers
 - ...
 
 Container Orchestration Frameworks:
-- Kubernetes (de-facto standard)
+- Kubernetes (de-facto standard, sometimes abreviated K8s)
+  - Features:
+    - Deployment-History (documentation, rollbacks, ...)
+    - Labeling system (place restrictions on deployments that aim to meet
+      specific requirements e.g. server capabilities like HW support)
+    - Health monitoring (liveness- & readiness-probing)
+    - Dashboard UI
 - Docker Swarm
-- Apache Mesos
+- Apache Mesos + Marathon
+- Amazon ECS
 - ...
 
 Resources:
 - [Cloud Native Computing Foundation](https://www.cncf.io/)
 - [Kubernetes Tutorial | Kubernetes | Kubernetes tutorial for beginners](https://www.youtube.com/watch?v=gpmerrSpbHg)
+- [Container Management: Kubernetes vs Docker Swarm, Mesos + Marathon, Amazon ECS](https://platform9.com/wp-content/uploads/2018/08/kubernetes-comparison-ebook.pdf)
+- [kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
