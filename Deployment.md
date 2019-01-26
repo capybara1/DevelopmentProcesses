@@ -45,3 +45,34 @@ Process:
 - The changes are deployed to the cabary server(s)
 - The changes are evalaluated by the users that are redirected to the canary servers
 - In case there are no major issues, the deployment can be extended to the remainng servers
+
+## Technologies
+
+### Virtualization
+
+![virtualization overview](./media/virtualization.svg)
+
+#### Hypervisor based Virtualization
+
+Products:
+- VMWare
+- VirtualBox
+- Hyper-V
+- ...
+
+#### Container based Virtualization
+
+Container Formats:
+- Docker (de-facto standard)
+- Windows Containers
+- ...
+
+Container Orchestration Frameworks:
+- Kubernetes (de-facto standard)
+- Docker Swarm
+- Apache Mesos
+- ...
+
+Resources:
+- [Cloud Native Computing Foundation](https://www.cncf.io/)
+- [Kubernetes Tutorial | Kubernetes | Kubernetes tutorial for beginners](https://www.youtube.com/watch?v=gpmerrSpbHg)
