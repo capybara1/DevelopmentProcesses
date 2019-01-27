@@ -107,7 +107,7 @@ Specialized, short-lived
 
 The notion of a Release Branch might differ, deppending on the context!
 
-##### Prior to Release
+##### Prior to Release (Integration)
 
 Compared to other Categories:
 - A kind of Integration Branch
@@ -123,10 +123,17 @@ Release Branches are used to refine a release candidate prior to it's release.
 The release is basically accomplished by reverse integration into *master* and the
 application of a label.
 
-##### During Release
+References:
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Git Repository Structure](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#release-branches)
+
+##### After Release (Maintenance)
 
 The Release Branches is created in order to create a release.
 The use of labels for marking a release is discouraged.
+
+Also known as [Maintenance Branch](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#maintenance-branches)
 
 Lifetime:
 - Long-Lived
@@ -142,6 +149,13 @@ Rules:
 Resources:
 - [Why not use tags for releases?](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts#why-not-use-tags-for-releases)
 - [ALM Basic Branch Plan - Purpose of Release Branch?](https://stackoverflow.com/questions/25293628/alm-basic-branch-plan-purpose-of-release-branch)
+
+#### Maintenance Branch
+
+See [Release Branches](#release-branches)
+
+References:
+- [Git Repository Structure](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#release-branches)
 
 #### Servicing Branch
 
@@ -220,7 +234,7 @@ Guidance:
 Resources:
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 13
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#main-only)
-- [Version Control Walkthrough (Branching Strategies) Part 1 – MAIN Only and Simplicity Rules](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-1-main-only-and-simplicity-rules/)
+- [Version Control Walkthrough (Branching Strategies) Part 1 ï¿½ MAIN Only and Simplicity Rules](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-1-main-only-and-simplicity-rules/)
 
 #### Development Isolation
 
@@ -237,7 +251,7 @@ Aspects:
 Resources:
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#development-isolation)
-- [Version Control Walkthrough (Branching Strategies) Part 2 – Development Isolation … welcome branching](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-2-development-isolation-welcome-branching/)
+- [Version Control Walkthrough (Branching Strategies) Part 2 ï¿½ Development Isolation ï¿½ welcome branching](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-2-development-isolation-welcome-branching/)
 
 #### Feature Isolation
 
@@ -245,7 +259,7 @@ Resources:
 - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18f.
 - [Feature Branch Workflow in Git](https://de.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
-- [Version Control Walkthrough (Branching Strategies) Part 3 – Feature Isolation … a special!](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/17/version-control-walkthrough-branching-strategies-part-3-feature-isolation-a-special/)
+- [Version Control Walkthrough (Branching Strategies) Part 3 ï¿½ Feature Isolation ï¿½ a special!](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/17/version-control-walkthrough-branching-strategies-part-3-feature-isolation-a-special/)
 
 #### Release Isolation
 
@@ -466,7 +480,7 @@ Purpose:
 #### Reparenting (TFVC)
 
 Resources:
-- [TFS – Reparenting a Branch](https://alistairbmackay.wordpress.com/2014/01/15/tfs-reparenting-a-branch/)
+- [TFS ï¿½ Reparenting a Branch](https://alistairbmackay.wordpress.com/2014/01/15/tfs-reparenting-a-branch/)
 
 ### Documenting Change
 
