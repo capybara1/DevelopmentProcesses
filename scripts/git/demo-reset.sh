@@ -35,7 +35,7 @@ git commit -m "Initial commit" |& indent
 
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
 
-echo "Second commit (1st)"
+echo "Commit (1st attempt)"
 
 echo "A
 B2" > demo.txt
@@ -61,7 +61,7 @@ echo "Reset staged files"
 
 git reset |& indent
 
-echo "Second commit (2nd attempt)"
+echo "Commit (2nd attempt)"
 
 git add demo.txt |& indent
 
@@ -77,7 +77,7 @@ git reset HEAD~1 |& indent # moves HEAD to 1st parent and resets the staged file
 echo "Graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
 
-echo "Second commit (3rd attempt)"
+echo "Commit (3rd attempt)"
 
 git add demo.txt |& indent
 
@@ -96,7 +96,7 @@ echo "Graph:"
 echo "Status:"
 [ "$(git status --short)" ] || echo "none" | indent
 
-echo "Reflog:"
+echo "Show Reflog:"
 git reflog |& indent
 
 echo "Undo reset:"
@@ -104,6 +104,43 @@ git reset 'HEAD@{1}' --hard |& indent
 
 echo "Graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
+
+echo "Status:"
+[ "$(git status --short)" ] || echo "none" | indent
+
+echo "Commit (4th attempt with accidental commit of sensitive data)"
+
+echo "Some confidential information" > passwords.txt
+
+git add passwords.txt |& indent
+
+git commit -m "Added passwords" |& indent
+
+echo "Graph:"
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
+
+echo "Status:"
+[ "$(git status --short)" ] || echo "none" | indent
+
+echo "Remove file with sensitive data"
+
+git filter-branch --force --prune-empty \
+--index-filter "git rm --cached --ignore-unmatch passwords.txt" \
+--tag-name-filter cat \
+-- --all |& indent
+
+echo "Expire reflog an run GC"
+git reflog expire --expire=now --all \
+&& git gc --prune=now --aggressive |& indent
+
+echo "Graph:"
+{ git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
+
+echo "Show Reflog:"
+[ "$(git reflog)" ] || echo "empty" | indent
+
+echo "Working directory:"
+ls -A |& indent
 
 echo "Status:"
 [ "$(git status --short)" ] || echo "none" | indent
