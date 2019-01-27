@@ -88,7 +88,7 @@ cd $TMPDEMODIR2
 echo -e "\x1B[35mCurrently at clone\x1B[m ($PWD)"
 
 echo "Fetch from remote"
-git fetch origin |& indent
+git fetch |& indent
 
 echo "Git graph:"
 { git log --graph --full-history --all --color --pretty=format:$LOGFORMAT; echo; } |& indent
