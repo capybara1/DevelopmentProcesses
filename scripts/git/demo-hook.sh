@@ -27,10 +27,12 @@ git add ".gitattributes" |& indent
 
 echo "Add pre-commit hook"
 
-echo "#!/bin/bash
+cat > ./.git/hooks/pre-commit <<EOF
+#!/bin/bash
 exec 1>&2
-echo -e \"\\x1B[31mDemo check failed\\x1B[m\"
-exit 1" > ./.git/hooks/pre-commit
+echo -e "\x1B[31mDemo check failed\x1B[m"
+exit 1
+EOF
 
 chmod +x ./.git/hooks/pre-commit
 
