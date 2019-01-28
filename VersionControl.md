@@ -422,6 +422,12 @@ Resources:
 Resources:
 - [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
 
+#### Hooks
+
+Resources:
+- [Two Ways to Share Git Hooks with Your Team](https://www.viget.com/articles/two-ways-to-share-git-hooks-with-your-team/)
+- [Including Hooks in a Git Repository](https://www.darrenlester.com/blog/including-hooks-in-a-git-repository)
+
 #### Pull Requests (Github, Gitlab, Bitbucket, VSTS, ...)
 
 Purpose:
