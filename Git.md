@@ -7,3 +7,7 @@
 - [How to get started with GIT and work with GIT Remote Repo](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Git_HowTo.html)
 - [Torsten Hoefler's Network Topology Repository](https://htor.inf.ethz.ch/research/topologies/)
 - [Eine Git-Referenz in Bildern](https://marklodato.github.io/visual-git-guide/index-de.html)
+
+## Misc
+
+- [Git lost my changes: Taking a look at Git's history simplification](https://docs.microsoft.com/en-us/azure/devops/articles/git-log-history-simplification?view=vsts)

@@ -545,7 +545,3 @@ that request pulls from the primary integration manager (Dictator).
 
 Resources:
 - [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_dictator_and_lieutenants_workflow)
-
-## Misc
-
-- [Git lost my changes: Taking a look at Git's history simplification](https://docs.microsoft.com/en-us/azure/devops/articles/git-log-history-simplification?view=vsts)
