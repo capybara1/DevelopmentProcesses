@@ -46,6 +46,18 @@ Process:
 - The changes are evalaluated by the users that are redirected to the canary servers
 - In case there are no major issues, the deployment can be extended to the remainng servers
 
+#### Deploymnet Rings
+
+Also known as Blast Radius.
+
+Rings:
+- Canaries
+- Early Adopters
+- Users
+
+Resources:
+- [Explore how to progressively expose your Azure DevOps extension releases in production to validate, before impacting all users](https://docs.microsoft.com/en-us/azure/devops/articles/phase-rollout-with-rings)
+
 ## Technologies
 
 ### Virtualization
