@@ -499,7 +499,53 @@ Schemes:
 - [Semantic versioning](https://semver.org/)
   - In a continuous deployment scenario, there might be no benefits in using a major version
 
-### Misc
+## Repositories
+
+### Categories
+
+#### Blessed Repository
+
+A blessed repository is used by every contributor as a reference.
+Usually there is only one person who has the rights to push changes to the blessed repository.
+
+Resources:
+- [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_centralized_workflow)
+
+#### Monorepo
+
+A single repository for many projects.
+
+Resources:
+- [Monorepo - Wikipedia](https://en.wikipedia.org/wiki/Monorepo)
+
+### Strategies
+
+#### Centralized Workflow
+
+One shared repository, open for contributions.
+
+Resources:
+- [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_centralized_workflow)
+
+#### Integration Manager Workflow
+
+Forks are created from a blessed repository and used
+to pull changes from by a integration manager on request.
+Changes which are ready for the integration into the
+Blessed Repository are pushed solely by the integration manager.
+
+Resources:
+- [Distributed Git - Distributed Workflows - Integration-Manager Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_integration_manager)
+
+#### Dictator and Lieutenants Workflow
+
+Similar to the Integration Manager Workflow, yet uses
+an additional layer of secondary integration managers (Lieutenants)
+that request pulls from the primary integration manager (Dictator).
+
+Resources:
+- [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_dictator_and_lieutenants_workflow)
+
+## Misc
 
 - [Git lost my changes: Taking a look at Git's history simplification](https://docs.microsoft.com/en-us/azure/devops/articles/git-log-history-simplification?view=vsts)
-- [Monorepo - Wikipedia](https://en.wikipedia.org/wiki/Monorepo)
