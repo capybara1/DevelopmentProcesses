@@ -2,7 +2,16 @@
 
 set -e
 
-LOGFORMAT="%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+ESC="%x1b"
+TAB="%x09"
+SPACE="%x20"
+RED="$ESC[31m"
+GREEN="$ESC[32m"
+RESET="$ESC[m"
+COMMIT_HASH="%h"
+REF_NAME="%d"
+SUBJECT="%s"
+LOGFORMAT="$RED$COMMIT_HASH$TAB$GREEN$REF_NAME$RESET$SPACE$SUBJECT"
 
 indent() { sed 's/^/  /'; }
 
