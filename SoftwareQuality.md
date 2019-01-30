@@ -19,7 +19,13 @@
 - Establish an alert
 - Keep in mind that code coverage is only an indicator that there might be a qulity issue; it does not replace the use of common sense during review
 
+Resources:
+- [Unit Test Fetish](http://250bpm.com/blog:40)
+- [Lean Testing or Why Unit Tests are Worse than You Think](https://blog.usejournal.com/lean-testing-or-why-unit-tests-are-worse-than-you-think-b6500139a009)
+
 ### Integration Tests
 
 - Consider creating integration tests for accessing the infrastructure
 - Consider creating integration tests for the most important workflows
+
+### End-To-End Test
