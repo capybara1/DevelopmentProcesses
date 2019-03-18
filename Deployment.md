@@ -58,6 +58,10 @@ Rings:
 Resources:
 - [Explore how to progressively expose your Azure DevOps extension releases in production to validate, before impacting all users](https://docs.microsoft.com/en-us/azure/devops/articles/phase-rollout-with-rings)
 
+#### Multi-Cloud
+
+- [Spinnaker](https://www.spinnaker.io/)
+
 ## Technologies
 
 ### Virtualization

@@ -1,5 +1,11 @@
 # Dependency Management
 
+## Challenges
+
+- Conflicting versions due to transitive dependencies
+- Repeatability of builds
+  - Usually realized by lock-files
+
 ## Strategies
 
 ### Monorepo
@@ -19,9 +25,9 @@ Categories:
   - Requires specialized tools and workflows, for example:
     - [Lerna](https://lernajs.io/)
     - [Yarn](https://yarnpkg.com)
-  - Higher risk of indroducing unintended coupling
-    due to missing isolation
-  - Size
+  - Higher risk of violating the *separation of concerns*
+    in a reasonable large code-base due to missing isolation
+  - Size, Scalability
 
 Resources:
 - [Building large scale react applications in a monorepo](https://medium.com/@luisvieira_gmr/building-large-scale-react-applications-in-a-monorepo-91cd4637c131)
@@ -59,5 +65,21 @@ Resources:
 ### Web Services
 
 #### Microservices
+
+> In short, the microservice architectural style is an approach
+> to developing a single application as a suite of small services,
+> each running in its own process and communicating with lightweight mechanisms,
+> often an HTTP resource API. These services are built around business capabilities
+> and independently deployable by fully automated deployment machinery.
+> There is a bare minimum of centralized management of these services,
+> which may be written in different programming languages and use different data storage technologies.
+
+Recommended:
+- Elastic Load Balance (ELB)
+  - Automated operations
+  - On demand provisioning
+
+- [Microservices - a definition of this new architectural term](https://martinfowler.com/articles/microservices.html)
+- [Mastering Chaos - A Netflix Guide to Microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM)
 
 ## License Management
