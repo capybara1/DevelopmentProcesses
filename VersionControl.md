@@ -537,12 +537,20 @@ Resources:
 - [Two Ways to Share Git Hooks with Your Team](https://www.viget.com/articles/two-ways-to-share-git-hooks-with-your-team/)
 - [Including Hooks in a Git Repository](https://www.darrenlester.com/blog/including-hooks-in-a-git-repository)
 
-#### Pull Requests (Github, Gitlab, Bitbucket, VSTS, ...)
+#### Merge/Pull Requests (Github, Gitlab, Bitbucket, VSTS, ...)
+
+Terminology:
+
+> Tools such as GitHub and Bitbucket choose the name “pull request” since the first manual action is
+> to pull the feature branch. Tools such as GitLab and others choose the name “merge request” since
+> the final action is to merge the feature branch. In this article, we’ll refer to them as merge requests. 
 
 Purpose:
 
 - Information
 - Provides an impulse to plan follow-up tasks in the developemnt process (code-review, discussion, ...)
+  ultimately resulting in a merge of two branches or a rejection of the request
+- They can be assigned to a person
 
 Process:
 
