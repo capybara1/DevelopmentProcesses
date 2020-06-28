@@ -543,7 +543,9 @@ Terminology:
 
 > Tools such as GitHub and Bitbucket choose the name “pull request” since the first manual action is
 > to pull the feature branch. Tools such as GitLab and others choose the name “merge request” since
-> the final action is to merge the feature branch. In this article, we’ll refer to them as merge requests. 
+> the final action is to merge the feature branch. In this article, we’ll refer to them as merge requests.
+
+[source](https://docs.gitlab.com/ee/topics/gitlab_flow.html#mergepull-requests-with-gitlab-flow)
 
 Purpose:
 
