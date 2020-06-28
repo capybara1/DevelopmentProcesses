@@ -133,6 +133,9 @@ Compared to other Categories:
 
 Purpose:
 
+- Isolates work the _development branch_ from changes which aim
+  to complete an upcoming release
+  - Allows working on the next version on the _development branch_
 - Maintains and protects the agreed upon qualities of *master*
   - Usually in this case each commit to *master* ought to be
     relatable to an actual release version
