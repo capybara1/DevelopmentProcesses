@@ -242,6 +242,30 @@ Purpose:
 
 - Resembles a state of maturity in the process of promoting changes up a hierarchie
 
+#### Production Branch
+
+Purpose:
+
+- Used in a Continuous Delivery Scenario to manage versioned production releases
+  - Merging into the production branch triggers a process that deploys the
+    versioned artefacts to the production environment
+- Commits only flow downstream
+  - Originating from _master_ or a [pre-production branch](#pre-production-branch)
+
+#### Pre-Production Branch
+
+Compared to other Categories:
+
+- Like a [production branch](#production-branch) but without the "Go Life"
+
+Purpose:
+
+- Used in a Continuous Delivery Scenario to manage versioned pre-production releases
+  - Merging into the production branch triggers a process that deploys the
+    versioned artefacts to the pre-production environment
+- Commits only flow downstream
+  - Originating from _master_
+
 ### Strategies
 
 Criteria:
@@ -373,11 +397,26 @@ Resources:
 Aspects:
 
 - Code close to *master* using Topic Braches
+- Designed for Continuous Delivery
 - Deployment to production (or a canary server) before the reverse integration of a Topic Branch into *master*
 
 Resources:
 
-- [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
+- [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+
+#### GitLab Flow
+
+Aspects:
+
+- Code close to *master* using Topic Braches
+- Designed for Continuous Delivery
+  - Promotes the usage of [production](#production-branch) and [pre-production branches](#pre-production-branch)
+    - _master_ is deployed on staging
+    - _pre-production_ and _production_ branches follow
+
+Resources:
+
+- [Introduction to GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 
 #### Trunk-Based Development
 
