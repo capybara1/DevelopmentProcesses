@@ -3,6 +3,7 @@
 ## Branching
 
 Considerations:
+
 - Using branches increases the risk of merge conflicts which might cause overhead (conflict resolution, testing, ...)
 - Using branches decreases the risk of unwanted side-effects by creating isolation
 
@@ -13,32 +14,39 @@ Considerations:
 Also known as *trunk* or *main(line)*
 
 Common qualities:
+
 - The master branch is always deployable
   - Each commit is thus at least a Potentially Shippable Increment (PSI)
   - In some cases each commit may be even associated with a release version
 
 Resouces:
+
 - https://agilevelocity.com/product-owner/psi-potentially-shippable-increment/
 - https://agilevelocity.com/product-owner/the-mmf-minimum-marketable-feature/
 
 #### Development Branch
 
 Comparison to other Categories:
+
 - Long-Lived multi-purpose branch (feature development, bugfixing, integration, ...)
 
 Purpose:
+
 - Maintains and protects the agreed upon qualities of *master*
 - Allows collaboration for a small amount of units (teams, ...)
 
 Lifetime:
+
 - Long-Lived
   - Created right after creation fo the repository
   - Indefinite life-span
 
 Rules:
+
 - Integrate in both directions on a regular basis
 
 Disadvantages:
+
 - Does not scale well
 - Unless otherwise agreed, anything in the master branch must be always deployable.
   Consequently, commits might become fairly complex, especially if the code base has become complex over time.
@@ -47,48 +55,59 @@ Disadvantages:
 #### Feature Branches
 
 Compared to other Categories:
+
 - Specialized, short-lived derivation of Development Branch
 
 Purpose:
+
 - Realization of a defined feature
 
 Lifetime:
+
 - Short-Lived
   - Created when the developemnt of the feature starts
   - Until the development is **done**
 
 Implications on Coding:
+
 - Allows rebasing (Git)
 
 Benefits:
+
 - Isolation of risk (e.g. unintended side-effects)
 - Integration is an explicit decision
 - Improves traceability (history)
 - By using Continuous Integration the developer might gain valuable feedback from the automatization of tests
 
 Rules:
+
 - Reintegration requires that all designed criteria (e.g. definition of done) are met
 
 #### Topic Branch
 
 Comparison to other Categories:
+
 - Similar to Feature Branch but focussing on finer grained changes than a feature
 
 Lifetime:
+
 - Short-Lived
   - Created when the development of the topic starts
   - Until the development is *done*
 
 Purpose:
+
 - Realization of a non-breaking change, usually an aspect of a defined feature, refactoring etc.
 
 Implications on Coding:
+
 - Small simple changes
 - All introduced changes *must* be non-breaking
 - Techniques such as e.g. Feature-Toggling are required to shield stakeholders (customers, users, developers, ...) from unintended side-effects
 - Allows rebasing (Git)
 
 Benefits:
+
 - Isolation of risk (e.g. unintended side-effects)
 - Integration is an explicit decision
 - Improves traceability (history)
@@ -98,9 +117,8 @@ Benefits:
 #### Bugfix Branch
 
 Compared to other Categories:
-- Specialized, short-lived derivation of Development Branch
 
-Specialized, short-lived 
+- Specialized, short-lived derivation of Development Branch
 - Removal of an undesired side-effect (defect, bug, ...)
 
 #### Release Branches
@@ -110,9 +128,11 @@ The notion of a Release Branch might differ, deppending on the context!
 ##### Prior to Release (Integration)
 
 Compared to other Categories:
+
 - A kind of Integration Branch
 
 Purpose:
+
 - Maintains and protects the agreed upon qualities of *master*
   - Usually in this case each commit to *master* ought to be
     relatable to an actual release version
@@ -124,6 +144,7 @@ The release is basically accomplished by reverse integration into *master* and t
 application of a label.
 
 References:
+
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 - [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [Git Repository Structure](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#release-branches)
@@ -136,17 +157,20 @@ The use of labels for marking a release is discouraged.
 Also known as [Maintenance Branch](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#maintenance-branches)
 
 Lifetime:
+
 - Long-Lived
   - Created when the release is ready to be locked down
   - Until support of release is discontinued
 
 Rules:
+
 - Lock the branch immediatelly; the only situations that permit a temporary removal of the log
   - Integrating changes for a subsequent minor release
   - In case there is not Hotfix Branch: hotfixing
 - Bugs should be fixed in master and subsequently merged to all relevant release branches
 
 Resources:
+
 - [Why not use tags for releases?](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts#why-not-use-tags-for-releases)
 - [ALM Basic Branch Plan - Purpose of Release Branch?](https://stackoverflow.com/questions/25293628/alm-basic-branch-plan-purpose-of-release-branch)
 
@@ -155,58 +179,70 @@ Resources:
 See [Release Branches](#release-branches)
 
 References:
+
 - [Git Repository Structure](https://github.com/boundlessgeo/suite/wiki/Git-Repository-Structure#release-branches)
 
 #### Servicing Branch
 
 Purpose:
+
 - Provides an additional level of isolation to a Release Branch
 - Origin of service pack Release Branches that belong to the same major version
   - A service pack is a collection of bugfixes, hotfixes and features targeting a previous product release
 
 Lifetime:
+
 - Long-Lived
   - Created when the release is ready to be locked down
   - Until support of release is discontinued
 
 Restrictions:
+
 - Never forward integrate from main to servicing, or from servicing to release.
 
 #### Hotfix Branches
 
 Purpose:
+
 - Provides an additional level of isolation to a Release Branch
 - Hotfixes can be made in the Hotfix Branch without affecting the history of the Release Branch
 
 Lifetime:
+
 - Long-Lived
   - Created when the release is ready to be locked down
   - Until support of release is discontinued
 
 Restrictions:
+
 - Never forward integrate from servicing to hotfix or from hotfix to release.
 
 Rules:
+
 - Under the presence of a hotfix branch, it is not permitted to apply a hotfix directly to the Release Branch
 
 #### Integration Branch
 
 Compared to other Categories:
+
 - Specialized derivation of Development Branch
 - In some cases the notion of a Release Brach is a kind of Integration Branch
 
 Purpose:
+
 - Maintains and protects the agreed upon qualities of *master*
 - Allows refined control of the integration of multiple branches for some purpose (e.g. creating a release)
 
 #### Test Branch
 
 Purpose:
+
 - Resembles a state of maturity in the process of promoting changes up a hierarchie
 
 ### Strategies
 
 Criteria:
+
 - Support-Plan
   - Multiple major releases in parallel
     - The intention of releases is to permit the introduction of breaking changes
@@ -219,6 +255,7 @@ Criteria:
 - Number of collaborating units (teams, ...)
   
 Approach:
+
 - Go for the simplest model possible
   - Only branch if neccessary
   - Branches should be be short-lived and thus merged back into *master* as soon as possible, to mitigate long-term merge effects (conflicts, ...)
@@ -226,12 +263,14 @@ Approach:
 - Evolve as needed
 
 Guidance:
+
 - [Explore how to manage branching strategies with a DevOps mindset in Team Foundation Version Control (TFVC)](https://docs.microsoft.com/en-us/azure/devops/articles/effective-tfvc-branching-strategies-for-devops?view=vsts)
 - [Adopt a Git branching strategy](https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=vsts)
 
 #### Main Only
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 13
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#main-only)
 - [Version Control Walkthrough (Branching Strategies) Part 1 � MAIN Only and Simplicity Rules](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-1-main-only-and-simplicity-rules/)
@@ -239,9 +278,11 @@ Resources:
 #### Development Isolation
 
 Relevant Branch Categories:
+
 - Development Branches
 
 Aspects:
+
 - Maintains and protects a stable *master*
   - *Master* is e.g. used for releases (assuming the propability of patching is low; might require the introduction of Hot Fix Branches just in case the assumption doesn't hold)
   - Multiple collaborating units may use separate Development Branches
@@ -249,6 +290,7 @@ Aspects:
 - Frequently kept in-sync with *master*
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#development-isolation)
 - [Version Control Walkthrough (Branching Strategies) Part 2 � Development Isolation � welcome branching](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2015/09/16/version-control-walkthrough-branching-strategies-part-2-development-isolation-welcome-branching/)
@@ -256,6 +298,7 @@ Resources:
 #### Feature Isolation
 
 Resources:
+
 - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18f.
 - [Feature Branch Workflow in Git](https://de.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
@@ -264,6 +307,7 @@ Resources:
 #### Release Isolation
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 14f.
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#feature-isolation)
 
@@ -272,6 +316,7 @@ Resources:
 Formerly also referred to as *Basic-Branch-Plan*
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 15
 - [Parallele Softwareentwicklung spielend meistern](https://www.heise.de/developer/artikel/Parallele-Softwareentwicklung-spielend-meistern-2042425.html?seite=all)
 
@@ -280,46 +325,55 @@ Resources:
 A hierarchie of multiple long-lived branches (e.g. *master* > development > test > release), where each branch represents a higher level of maturity
 
 Disadvantages:
+
 - Due to the disadvantages of long-lived branches, the use of this strategy is usually discouraged
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 18
 
 #### Servicing and Release Isolation
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 15f.
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#servicing-and-release-isolation)
 
 #### Servicing, Hotfix and Release Isolation
 
 Resources:
+
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 17
 - [TFVC Guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=vsts#servicing-hotfix-release-isolation)
 
 #### Gitflow
 
 Resources:
+
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 - [Gitflow Workflow](https://de.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 #### Git Integration Based Workflow
 
 Resources:
+
 - [Git Integration Based Workflow](http://www.practicalweb.co.uk/blog/2015/02/16/git-integration-branch-based-workflow/)
 
 #### Forking
 
 Resources:
+
 - [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
 #### GitHub Flow
 
 Aspects:
+
 - Code close to *master* using Topic Braches
 - Deployment to production (or a canary server) before the reverse integration of a Topic Branch into *master*
 
 Resources:
+
 - [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
 
 #### Trunk-Based Development
@@ -327,10 +381,12 @@ Resources:
 ![branches continuous](./media/branches_cont.svg)
 
 Aspects:
+
 - Code close to *master* using Topic Braches
 - Attempt to avoid effects of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 Resources:
+
 - [Trunk-Based Development:Introduction](https://trunkbaseddevelopment.com/)
 - [The best branching model to work with Git](https://medium.com/@grazibonizi/the-best-branching-model-to-work-with-git-4008a8098e6a)
 
@@ -339,6 +395,7 @@ Resources:
 #### Merging (Universal)
 
 Resources:
+
 - https://backlog.com/git-tutorial/integrating-branches/
 
 ##### Reverse integration (Universal)
@@ -346,6 +403,7 @@ Resources:
 Merging from child to parent
 
 Purpose:
+
 - Releasing the (assumablly) final state of a change
 
 ##### Forward Integration (Universal)
@@ -353,6 +411,7 @@ Purpose:
 Merging from parent to child
 
 Purpose:
+
 - Regular Forward Integration keeps the deviation from the parent low
   - Multiple small conflic resolutions are less effort in sum than a single large one
 - Always Forward Integrate before Reverse Integrate
@@ -364,6 +423,7 @@ is used to automatically resolve a subset of conflicts.
 The amount of situations, where manual intervention is required, is minimized.
 
 Resources:
+
 - [Three-Way Merging: A Look Under the Hood](http://www.drdobbs.com/tools/three-way-merging-a-look-under-the-hood/240164902)
 
 ##### Fast-Formward-Merge (Git)
@@ -371,6 +431,7 @@ Resources:
 Merge that takes advantage that no changes have been comitted sinde branching of, targeting a linear history
 
 Resources:
+
 - [Fast-Forward Git Merge](https://ariya.io/2013/09/fast-forward-git-merge)
 - [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 - [Git tips: Use only fast-forward merges (with rebase)](https://medium.com/@mvuksano/git-tips-use-only-fast-forward-merges-with-rebase-c80c9d260a83)
@@ -380,6 +441,7 @@ Resources:
 Hotfixing refers to the practice that changes are made in or close to the Release Branch, primarily to safe time
 
 Implications:
+
 - Higher risk of undesired side-effects due to the lack of proper testing
 - Change need to be integrated in other branches
 
@@ -392,12 +454,14 @@ Selecting only certain files to merge back to main branch.
 Also known as Feature-Flags
 
 Resources:
+
 - [ALM Rangers : Software Development with Feature Toggles](https://msdn.microsoft.com/en-ca/magazine/dn683796.aspx)
 - [TFS Version Control V3.1 - Part 1 - Branching Strategies](https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf), p. 21
 
 #### Labeling (Universal)
 
 Considerations:
+
 - Lables are mutable
 
 #### Reverting (Universal)
@@ -414,33 +478,39 @@ This lets you roll back changes if a bug is found, or if you decide to head in a
 #### Pushing to a remote repository (Git)
 
 Resources:
+
 - [Pushing to a remote](https://help.github.com/articles/pushing-to-a-remote/)
 - [About collaborative development models](https://help.github.com/articles/about-collaborative-development-models/)
 
 #### Syncing with a remote repository (Git)
 
 Resources:
+
 - [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
 
 #### Hooks
 
 Resources:
+
 - [Two Ways to Share Git Hooks with Your Team](https://www.viget.com/articles/two-ways-to-share-git-hooks-with-your-team/)
 - [Including Hooks in a Git Repository](https://www.darrenlester.com/blog/including-hooks-in-a-git-repository)
 
 #### Pull Requests (Github, Gitlab, Bitbucket, VSTS, ...)
 
 Purpose:
+
 - Information
 - Provides an impulse to plan follow-up tasks in the developemnt process (code-review, discussion, ...)
 
 Process:
+
 1. Branch is pushed to a public repository fork, hosted by the provider
 2. Pull request is created using the provider's user interface
 3. Review process
 4. In case all required criteria are met, the branch is fetched into the primary repository and subsequently integrated
 
 Resources:
+
 - [About collaborative development models](https://help.github.com/articles/about-collaborative-development-models/)
 - [About pull requests](https://help.github.com/articles/about-pull-requests/)
 - [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
@@ -449,6 +519,7 @@ Resources:
 #### Rebasing (Git)
 
 Purpose:
+
 - Reapply commits on top of another base tip, either unmodified or with modifications
   using a [range of special commands](https://help.github.com/articles/about-git-rebase/#commands-available-while-rebasing)
   provided in the context of rebasing
@@ -458,9 +529,11 @@ Purpose:
   in order to improve readability and [documentation](#documenting-change)
 
 Disadvantages:
+
 - Do not rebase commits that have already been pushed to a public repository
 
 Resources:
+
 - [rebase documentation](https://git-scm.com/docs/git-rebase)
 - [Using Git rebase on the command line](https://help.github.com/articles/using-git-rebase-on-the-command-line/)
 - [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
@@ -470,9 +543,11 @@ Resources:
 #### Resetting (Git)
 
 Purpose:
+
 - Changing the position of the HEAD pointer, the staged items and the working directory to a former state
 
 Resources:
+
 - [Git Tools - Reset Demystified](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
 
 ##### Squashing (Git)
@@ -480,13 +555,15 @@ Resources:
 Combining multiple commits into a single commit.
 
 Purpose:
+
 - Simplification
 - Refinement if individual commits cannot be considered a meaningful unit of change by themselves
 
 #### Reparenting (TFVC)
 
 Resources:
-- [TFS � Reparenting a Branch](https://alistairbmackay.wordpress.com/2014/01/15/tfs-reparenting-a-branch/)
+
+- [TFS - Reparenting a Branch](https://alistairbmackay.wordpress.com/2014/01/15/tfs-reparenting-a-branch/)
 
 ### Documenting Change
 
@@ -496,6 +573,7 @@ Resources:
 ### Versioning
 
 Schemes:
+
 - [Semantic versioning](https://semver.org/)
   - In a continuous deployment scenario, there might be no benefits in using a major version
 
@@ -509,6 +587,7 @@ A blessed repository is used by every contributor as a reference.
 Usually there is only one person who has the rights to push changes to the blessed repository.
 
 Resources:
+
 - [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_centralized_workflow)
 
 #### Monorepo
@@ -516,6 +595,7 @@ Resources:
 A single repository for many projects.
 
 Resources:
+
 - [Monorepo - Wikipedia](https://en.wikipedia.org/wiki/Monorepo)
 
 ### Strategies
@@ -525,6 +605,7 @@ Resources:
 One shared repository, open for contributions.
 
 Resources:
+
 - [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_centralized_workflow)
 
 #### Integration Manager Workflow
@@ -535,6 +616,7 @@ Changes which are ready for the integration into the
 Blessed Repository are pushed solely by the integration manager.
 
 Resources:
+
 - [Distributed Git - Distributed Workflows - Integration-Manager Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_integration_manager)
 
 #### Dictator and Lieutenants Workflow
@@ -544,4 +626,5 @@ an additional layer of secondary integration managers (Lieutenants)
 that request pulls from the primary integration manager (Dictator).
 
 Resources:
+
 - [Distributed Git - Distributed Workflows - Centralized Workflow](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#_dictator_and_lieutenants_workflow)
