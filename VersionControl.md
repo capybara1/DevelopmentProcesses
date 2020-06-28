@@ -612,12 +612,31 @@ Resources:
 - Commits also create a transparent history of work
 - Each commit has an associated commit message, which is a description explaining *why* a particular change was made
 
-### Versioning
+### Versioning Schemes
 
-Schemes:
+#### Semantic Versioning
 
-- [Semantic versioning](https://semver.org/)
-  - In a continuous deployment scenario, there might be no benefits in using a major version
+Purpose:
+
+- Promotes the sole usage of versions to imply compatibility
+
+Implications:
+
+- Version numbers cannot not be influenced by marketing decisions
+- Each unit with an isolated build process is versioned individually
+  - An additional version for communicating a _product_ that is
+    composed of these units is recommended
+    - The product versioning scheme ought to be distinguishable
+      from the versions of the units in order to prevent confusion e.g.
+      by using codenames such as Alpha, Beta, Cupcake, Donut (Android)
+
+Resources:
+
+- [Secification](https://semver.org/)
+
+See also supporting concepts:
+
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Repositories
 
